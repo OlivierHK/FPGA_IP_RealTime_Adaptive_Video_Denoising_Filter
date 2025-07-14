@@ -9,7 +9,7 @@
 --FILE        : filters_package.vhd
 --DESCRIPTION : Package containing all the filters of the IP: 
 --              * CWM Filter (Weighted 15) => remove impulsive noise.
--- 				* Gauss 3x3                => remove Gaussian noise on middle detailed area.
+-- 		* Gauss 3x3                => remove Gaussian noise on middle detailed area.
 --              * Gaus 5x5                 => remove Gaussian noise on low detailed area.
 --              * NOP                      => No operation on high-detailed area or others.
 ---------------------------------------------------------------------------------------------
@@ -87,20 +87,6 @@ PACKAGE filter IS
 		
 	END COMPONENT ;	
 	
-
---	COMPONENT big_or
---		PORT (
---			out_control  : IN std_logic_vector( 1 DOWNTO 0) ;
---			out_filter00 : IN type_pixel                    ;
---			out_filter01 : IN type_pixel                    ;
---			out_filter10 : IN type_pixel                    ;
---			out_filter11 : IN type_pixel                    ;
---			--clock : IN std_logic ;
---			pixel        : OUT type_pixel
---		);
---		
---	END COMPONENT ;
---	
 END filter;
 
 
@@ -111,7 +97,7 @@ END filter;
 ------------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE work.type_perso.ALL;
+--USE work.type_perso.ALL;
 USE ieee.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
@@ -372,7 +358,7 @@ END cwm_arch;
 -------------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE work.type_perso.ALL;
+--USE work.type_perso.ALL;
 USE ieee.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
@@ -432,7 +418,7 @@ BEGIN
 	
 	--addition~conversion to integer. add are done two-by-two, in a tree-way, to ease Synthesis and parallelized adder,
 	sum_int     <= (((to_integer(unsigned(mask_mult(0)))   +  to_integer(unsigned(mask_mult(1))))  +(to_integer(unsigned(mask_mult(2)))
-		            + to_integer(unsigned(mask_mult(3))))) +((to_integer(unsigned(mask_mult(4)))   + to_integer(unsigned(mask_mult(5))))
+		        + to_integer(unsigned(mask_mult(3))))) +((to_integer(unsigned(mask_mult(4)))   + to_integer(unsigned(mask_mult(5))))
 	                +(to_integer(unsigned(mask_mult(6)))   +  to_integer(unsigned(mask_mult(7))))))+ to_integer(unsigned(mask_mult(8)));
 	
 	--conversion to std_logic_vector of 12-bit to avoid overflow
@@ -471,7 +457,7 @@ END gauss3x3_arch;
 -------------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE work.type_perso.ALL;
+--USE work.type_perso.ALL;
 USE ieee.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
@@ -684,7 +670,7 @@ END gauss5x5_arch;
 ------------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE work.type_perso.ALL;
+--USE work.type_perso.ALL;
 USE ieee.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
