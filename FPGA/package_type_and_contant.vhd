@@ -23,8 +23,8 @@ PACKAGE package_type_and_contant IS
 	TYPE    small_mask_mult IS ARRAY(8  DOWNTO 0) OF std_logic_vector(9 DOWNTO 0); -- exented pixel size of a 3x3 block for avoinding overflow.
 	TYPE    type_mask_5     IS ARRAY(4  DOWNTO 0) OF type_pixel;                   -- 5 elements of pixel to represent in-stream data.
 
-	constant T1: integer RANGE 0 to 255 := 20;
-	constant T2: integer RANGE 0 to 255 := 20;
-	constant T3: integer RANGE 0 to 255 := 20;
-	constant T4: integer RANGE 0 to 255 := 20;
+	constant T1: integer RANGE 0 to 255 := 50; -- Cross-Mssk absolute Maximum Threshold.
+	constant T2: integer RANGE 0 to 255 := 05; -- Cross-Mssk absolute Minimum Threshold.
+	constant T3: integer RANGE 0 to 255 := 10; -- Detail Estimator Threshold for Guaussian 3x3 and 5x5.
+	constant T4: integer RANGE 0 to 255 := 20; -- Detail Estimator Threshold for NOP Filter.
 END package_type_and_contant;
