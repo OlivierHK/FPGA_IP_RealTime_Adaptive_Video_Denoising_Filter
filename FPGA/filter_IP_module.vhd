@@ -9,7 +9,7 @@
 --FILE        : filter_IP_module.vhd
 --DESCRIPTION : Wrapper of the Filter module. Take a 5x5 kernel input, 
 --              instanciates the controle module, all filters modules, and final  
--- 				Mux for the output Pixel. Output filtered Pixel and ctrl vector. 
+-- 		Mux for the output Pixel. Output filtered Pixel and ctrl vector. 
 --------------------------------------------------------------------------------
 
 LIBRARY ieee;
