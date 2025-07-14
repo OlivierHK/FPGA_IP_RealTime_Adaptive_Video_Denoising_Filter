@@ -26,10 +26,10 @@ ENTITY module_top IS
 		in_stream3: IN  std_logic_vector (7 DOWNTO 0); --4th Line of pixel.
 		in_stream4: IN  std_logic_vector (7 DOWNTO 0); --5th Line of pixel.
         
-        clk       : IN  std_logic;                     --SYSCLK : 100MHZ.
+       		clk       : IN  std_logic;                     --SYSCLK : 100MHZ.
 		rst       : IN  std_logic;                     --Synchronized reset signal.
         
-        pixel     : OUT std_logic_vector (7 DOWNTO 0); --Centered filtered Pixel.
+        	pixel     : OUT std_logic_vector (7 DOWNTO 0); --Centered filtered Pixel.
 		controle  : OUT std_logic_vector (1 DOWNTO 0)  --Filter type applies to the centered pixel.
 	);	
 END module_top;
